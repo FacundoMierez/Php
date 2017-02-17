@@ -36,7 +36,7 @@ $category->save();
 
 $user=new App\User();
 $user->name="Lionel Messi";
-$user->email="lionel@messi.com;
+$user->email="lionel@messi.com";
 $user->password=bcrypt('argentina');
 $user->save();
 
@@ -44,8 +44,8 @@ $user->save();
 $article=new App\Article();
 $article->title="Noticia de ultima Hora";
 $article->content="Contenido de la noticia";
-$article->catgory_id=1;
-$article->user_id=id del usuario agregado arrribva;
+$article->category_id=1;
+$article->user_id=1;
 $article->save();
 
 $tag=new App\Tag();

@@ -7,14 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $table="articles";
-    protected $fillable=['title','content','category_id','user_id'] //campos que queremos mostrar
+    protected $fillable=['title','content','category_id','user_id']; //campos que queremos mostrar
 
     //singular porque solo puede tener una categoria
-    publc function category(){
+    public function category(){
     	return $this->belognsTo('App\Category');
     }
 
-    publc function user(){
+    public function user(){
     	return $this->belognsTo('App\User');
     }
 
