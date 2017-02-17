@@ -1,0 +1,58 @@
+Crear proyecto:
+
+Configuraciones:
+
+1)cd xampp/htdcos
+2)composer create-project --prefer-dist laravel/proyecto nombreproyecto
+3)cambiamos el nombre de la aplicacion: 
+	3.1)cd blog
+	3.2)php artisan app:name Cotizaciones
+
+4)Configuramos la base de datos en el archivo .env
+
+Modelos:
+1)Comando para crear: php artisan make:model User
+2)Creamos la tabla correspondiente: php artisan make:migration create_table_productos --create="productos"
+3)creamos la tabla perfiles: php artisan make:migration create_table_perfiles --create="perfiles"
+4)Agreamos al modelo usuario la clave foranea de perfiles.
+5)Mediante el comando creamos la llave foranea: php artisan make:migration create_foreing_perfilUsua
+rio
+6)realizar las migraciones -> php artisan migrate
+
+Cuando se clona un proyecto de laravel, con el comando composer update, con esto se instalan todos los paquetes que estan definido en composer.json.
+
+Con Tinker podemos hacer pruebas:
+1)php artisan tinker
+2)Craamos un objeto $user=['name'=>'facundo','email'=>'facundo@gmail.com','password'=>bcrypt('123')]
+3)luego para insertar llamamos a la funcion \App\User::create($user);
+4)Para traer los registros almacenados -> $users=\App\users:all();
+
+USO DE TINKER:
+
+$category=new App\Category();
+$category->name="Noticias";
+$category->save();
+
+
+$user=new App\User();
+$user->name="Lionel Messi";
+$user->email="lionel@messi.com;
+$user->password=bcrypt('argentina');
+$user->save();
+
+
+$article=new App\Article();
+$article->title="Noticia de ultima Hora";
+$article->content="Contenido de la noticia";
+$article->catgory_id=1;
+$article->user_id=id del usuario agregado arrribva;
+$article->save();
+
+$tag=new App\Tag();
+$tag->name="Sucesos";
+$tag->save();
+
+
+
+
+
