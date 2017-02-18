@@ -11,11 +11,12 @@ class Article extends Model
 
     //singular porque solo puede tener una categoria
     public function category(){
-    	return $this->belognsTo('App\Category');
+    	return $this->belongsTo('App\Category');
+
     }
 
     public function user(){
-    	return $this->belognsTo('App\User');
+    	return $this->belongsTo('App\User');
     }
 
     public function images(){
@@ -24,6 +25,6 @@ class Article extends Model
     }
 
     public function tags(){
-    	return $this->belognsToMany('App\Tag');
+    	return $this->belongsToMany('App\Tag');
     }    
 }

@@ -52,7 +52,22 @@ $tag=new App\Tag();
 $tag->name="Sucesos";
 $tag->save();
 
+Para buscar ingresamos el siguiente comando
+$article=App\Article::find(1);
+
+Para saber que categorias tiene un articulo solo tengo que llamar a la funcion category de article.
+$article->category();
+
+ahora si llamo a $article, contendra los valores de la categoria asociada
+
+de igual manera hacemos: $article->category();
+
+AHORA VAMOS A INSERTAR LOS TAGS
+
+Si verifico $article->tags nos deberia devolver vacio
 
 
+$article->tags()->attach();
+Attach lo que va hacer es usar la tabla pibot en la relacion de * a *
 
-
+como parametro podemos pasar el tags que previamente tuvimos que haber creado o el id del tags.
