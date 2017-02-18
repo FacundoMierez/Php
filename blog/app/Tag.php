@@ -10,6 +10,6 @@ class Tag extends Model
     protected $fillable=['name']; //campos que queremos mostrar
 
     public function articles(){
-    	return $this->belongsToMany('App\Article')->withTimestamps();//->withTimestamps() agregamos esto para evitar posibles errores
+    	return $this->belongsToMany('App\Article')->withTimestamps();//->withTimestamps() agregamos esto para evitar posibles errore
     }
 }

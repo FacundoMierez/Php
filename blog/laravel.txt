@@ -71,3 +71,10 @@ $article->tags()->attach(1);
 Attach lo que va hacer es usar la tabla pibot en la relacion de * a *
 
 como parametro podemos pasar el tags que previamente tuvimos que haber creado o el id del tags.
+
+
+RUTAS:
+
+Route::get('/articles/{nombre?}', function ($nombre ="No coloco nombre") {
+     echo "Esta es la seccion de articulos" . $nombre;
+});
