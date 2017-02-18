@@ -16,6 +16,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/articles/{nombre?}', function ($nombre ="No coloco nombre") {
-     echo "Esta es la seccion de articulos" . $nombre;
+Route::group(['prefix'=>'articles'],function(){
+
+	Route::get('view/{id?}',function($id="no especificado"){
+		echo "Esta es la vista de view article con id: ".$id;
+	});
+
 });
