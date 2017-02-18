@@ -18,8 +18,11 @@ Route::get('/', function () {
 
 Route::group(['prefix'=>'articles'],function(){
 
-	Route::get('view/{id?}',function($id="no especificado"){
-		echo "Esta es la vista de view article con id: ".$id;
-	});
+	Route::get('view/{id}',[
+
+		'uses'=> 'ArticlesController@Index',
+		'as' => 'ArticleView' //nombre de la ruta
+
+	]);
 
 });
