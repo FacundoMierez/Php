@@ -14,9 +14,8 @@ class ArticlesController extends Controller
 	  	$article->category;
 	  	$article->user;
 	  	$article->tags;
-	 
-
-	  	echo $article;
+	 	
+	 	return view('articles.view',['articles'=>$article]);
 
     }
 }

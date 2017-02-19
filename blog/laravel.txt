@@ -78,3 +78,28 @@ RUTAS:
 Route::get('/articles/{nombre?}', function ($nombre ="No coloco nombre") {
      echo "Esta es la seccion de articulos" . $nombre;
 });
+
+BLADE MOTOR DE PLANTILLAS
+
+{{$articles->title}}
+
+@for($i = 0; $i <=5; $i++)
+	{{$i}}
+@endfor
+
+@if(true)
+	<h1>trueeeee</h1>
+@endif
+
+@foreach($item as $articles)
+	....
+@endforeach
+
+
+Instalamos Eloquent-Sluggable para que en la url te formatee de la sig manera:
+
+supongamos que tenemos localhost/article/view/1
+
+vamos a tener localhost/article/view/titulo-de-la-noticia
+
+php artisan route:list
