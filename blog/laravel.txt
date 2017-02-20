@@ -103,3 +103,9 @@ supongamos que tenemos localhost/article/view/1
 vamos a tener localhost/article/view/titulo-de-la-noticia
 
 php artisan route:list
+
+
+Paquetes:
+
+Para las notificaciones usamos ->lacraclast
+como motor de plantilla ->blade

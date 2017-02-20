@@ -59,7 +59,9 @@
         <div class="panel-body">
           @yield('content')
         </div>
-
+        <div class="panel-footer">
+          @include('flash::message')
+        </div>
       </div>
     </div>	
   </div>
