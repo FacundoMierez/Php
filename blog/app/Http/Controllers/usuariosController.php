@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 use Laracasts\Flash\Flash;
 use App\User;
-
+use App\Http\Requests\UserRequest;
 use Illuminate\Http\Request;
 
 
@@ -25,14 +25,14 @@ class usuariosController extends Controller
     	return view('admin.users.create');
     }
     
-    public function store(Request $request){
+    public function store(UserRequest $request){
     	
     	$user=new User($request->all());
     	$user->password=bcrypt($request->password);
     	$user->save();
         flash('Se ah registrado con exito a ' .$user->name, 'success')->important();
         //Flash::success("Se ah registrado con exito a " .$user->name);
-        return redirect()->route('admin.users.index');
+        return redirect()->route('users.index');
 
 
     }

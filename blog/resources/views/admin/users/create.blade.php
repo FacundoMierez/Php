@@ -4,6 +4,13 @@
 @section('title','Crear Usuarios')
 
 @section('content')
+	
+	@foreach ($errors->all() as $error)
+		<div class="alert alert-danger"> 
+			{{$error}}	
+		</div>
+	@endforeach
+
 	{!! Form::open(['route'=>'users.store','method' => 'POST']) !!}
 		
 		<div class="form-group">
