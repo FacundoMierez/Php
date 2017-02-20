@@ -15,12 +15,12 @@
 		
 		<div class="form-group">
 			{!! Form::label('name','Nombre', ['class' => ''])!!}
-			{!! Form::text('name',null, ['class' => 'form-control','placeholder'=>'Ingrese Nombre','required','autofocus'])!!} <!--params:nombre,valorpor defecto, clases-->
+			{!! Form::text('name',null, ['class' => 'form-control','placeholder'=>'Ingrese Nombre','required','autofocus','minlength'=>'5'])!!} <!--params:nombre,valorpor defecto, clases-->
 		</div>
 
 		<div class="form-group">
 			{!! Form::label('email','Email', ['class' => ''])!!}
-			{!! Form::email('email',null, ['class' => 'form-control','placeholder'=>'Ingrese Email','required'])!!} <!--params:nombre,valorpor defecto, clases-->
+			{!! Form::email('email',null, ['class' => 'form-control','placeholder'=>'Ingrese Email','required','minlength'=>'5'])!!} <!--params:nombre,valorpor defecto, clases-->
 		</div>
 
 		<div class="form-group">

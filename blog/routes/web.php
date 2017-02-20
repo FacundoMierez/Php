@@ -30,12 +30,29 @@ Route::group(['prefix'=>'articles'],function(){
 });
 
 Route::group(['prefix'=>'admin'],function(){
-					//primero parametro nombre y segundo el controlador
+	
+
+	/* INICIO RUTAS DE USUARIOS*/
+
+	//primero parametro nombre y segundo el controlador
 	Route::resource('users','usuariosController');
+	
 	Route::get('users/{id}/destroy',[
 		'uses'=>'usuariosController@destroy',
 		'as'=>'users.destroy'
 	]);
+
+	/* FIN RUTAS DE USUARIOS*/
+
+
+	/* INICIO RUTAS DE USUARIOS*/
+	Route::resource('categories','CategoriasController');
+
+	Route::get('categories/{id}/destroy',[
+		'uses'=>'CategoriasController@destroy',
+		'as'=>'categories.destroy'
+	]);
+	/* FIN RUTAS DE USUARIOS*/
 
 });
 

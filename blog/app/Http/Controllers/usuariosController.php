@@ -34,7 +34,6 @@ class usuariosController extends Controller
         //Flash::success("Se ah registrado con exito a " .$user->name);
         return redirect()->route('users.index');
 
-
     }
 
     public function destroy($id){
