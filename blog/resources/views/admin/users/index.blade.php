@@ -43,7 +43,7 @@
 					<td>
 						<a href="{{route('users.destroy',$item->id)}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash" ></i></a>
 
-						<button class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></button>
+						<a href="{{route('users.edit',$item->id)}}" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></a>
 
 					</td>
 					

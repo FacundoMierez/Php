@@ -111,3 +111,5 @@ Para las notificaciones usamos ->lacracast
 como motor de plantilla ->blade
 
 Cuando utilizamos resource, la ruta que nos crea para el metodo delete del tipo POST recibe como parametro un objeto por ejemplo de tipo USERS, por lo que requiere hacer un formulario solo para eliminar, para solucionar ello debemos crear una ruta de tipo get que reciba un ID que corresponda al elemento que se quiere eliminar
+
+Cambia de host: php artisan serve --host=192.168.0.12:8000 y desde el lugar donde querramos ingresar, ingresar el n° de host donde corre la aplicacion

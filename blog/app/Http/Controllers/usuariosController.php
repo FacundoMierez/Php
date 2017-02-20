@@ -44,4 +44,20 @@ class usuariosController extends Controller
         return redirect()->route('users.index');
     }
 
+    public function edit($id){
+        
+        $user=User::find($id);
+       
+       return view('admin.users.edit')->with('user',$user);
+    }
+
+    public function update(Request $request,$id){
+        $user=User::find($id);
+        $user->fill($request->all());
+        $user->save();
+
+        Flash::warning('Se edito correctamente');
+        return redirect()->route('users.index');
+    }
+
 }
