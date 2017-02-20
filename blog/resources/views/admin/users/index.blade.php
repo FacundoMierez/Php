@@ -40,11 +40,8 @@
 						<td>{{$item->type}}</td>
 					@endif
 
-					
-					
-
 					<td>
-						<button class="btn btn-danger"><i class="glyphicon glyphicon-trash"></i></button>
+						<a href="{{route('users.destroy',$item->id)}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash" ></i></a>
 
 						<button class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></button>
 

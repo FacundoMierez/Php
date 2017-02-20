@@ -32,10 +32,16 @@ class usuariosController extends Controller
     	$user->save();
         flash('Se ah registrado con exito a ' .$user->name, 'success')->important();
         //Flash::success("Se ah registrado con exito a " .$user->name);
-        return redirect()->route('users.index');
+        return redirect()->route('admin.users.index');
 
 
     }
 
+    public function destroy($id){
+        $user=User::find($id);
+        $user->delete($user);
+        Flash::warning('Se elimino correctamente el usuario '. $user->name);
+        return redirect()->route('users.index');
+    }
 
 }

@@ -32,6 +32,10 @@ Route::group(['prefix'=>'articles'],function(){
 Route::group(['prefix'=>'admin'],function(){
 					//primero parametro nombre y segundo el controlador
 	Route::resource('users','usuariosController');
+	Route::get('users/{id}/destroy',[
+		'uses'=>'usuariosController@destroy',
+		'as'=>'users.destroy'
+	]);
 
 });
 
