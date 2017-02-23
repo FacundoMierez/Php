@@ -17,10 +17,11 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Redirecciona a la pagina principal
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
         $categories=Category::all();

@@ -29,10 +29,15 @@ Route::group(['prefix'=>'articles'],function(){
 
 });
 
-Route::group(['prefix'=>'admin'],function(){
+Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	
 
 	/* INICIO RUTAS DE USUARIOS*/
+
+	Route::get('users/list',[
+		'uses'=>'usuariosController@list',
+		'as'=>'users.list'
+	]);
 
 	//primero parametro nombre y segundo el controlador
 	Route::resource('users','usuariosController');
@@ -41,6 +46,8 @@ Route::group(['prefix'=>'admin'],function(){
 		'uses'=>'usuariosController@destroy',
 		'as'=>'users.destroy'
 	]);
+
+
 
 	/* FIN RUTAS DE USUARIOS*/
 

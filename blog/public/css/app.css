@@ -12,13 +12,45 @@
 
 .category{
 	background:#4B6A38;
-	color:white;
 	text-decoration: none;
 	height:250px;
+}
+
+.category a{
+	color:white;
+	list-style: none;
 }
 
 .search{
 	background:#7BAA5F;
 	color:white;
 
+}
+
+.feature{
+	margin-top: 50px;
+
+}
+
+.feature-new{
+	height: 40px;
+	background:#7BAA5F;
+	text-align: center;
+	color: white;
+}
+
+.popular{
+	background:#4B6A38;
+	width: 150px;
+	text-align: center;
+	
+}
+
+
+
+.reciente{
+	background:#7BAA5F;
+	width: 150px;
+	text-align: center;
+	color:white !important;
 }
