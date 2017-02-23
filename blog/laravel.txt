@@ -120,3 +120,8 @@ php artisan make:request CategoryRequest  ->como ejemplo
 
 
 "php artisan make:controller NOMBREDELCONTROLADOR --model=NOMBREDELMODELO"
+
+Estilos BOOTSTRAP:
+en la linea 4514 del archivo bootstrap css encontramos los estilos del hover de los li del menu
+Para sacar el padding del navbar hay que modificar en la linea 4166
+para cambiar el fondo del navbar-default tenemos que ir a la linea 4499

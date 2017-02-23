@@ -23,7 +23,18 @@
 </head>
 <body>
     <div id="app">
+        
         <nav class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <h1>BLOG</h1>
+                </div>
+            </div>          
+        </nav>
+      
+        <nav class="navbar navbar-default navbar-static-top menu-abajo">
+            
+            <!--INICIO CONTAINER-->
             <div class="container">
 
                 <!--HEADER MENU-->
@@ -51,6 +62,12 @@
                     
                     <!-- Authentication Links -->
                      @if (Auth::guest())
+
+                     <ul  class="nav navbar-nav">
+                        <li><a href="#">Articulos</a></li>
+                        <li><a href="#">Imagenes</a></li>
+                        <li><a href="#">Tags</a></li>
+                     </ul>
 
                      <!-- Right Side Of Navbar -->
                      <ul class="nav navbar-nav navbar-right">
@@ -90,7 +107,10 @@
                         @endif
                         </ul>
                 </div>
+
             </div>
+            <!--FIN CONTAINER-->
+
         </nav>
         <div class="container">
             @yield('content')
