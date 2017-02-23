@@ -1,5 +1,4 @@
-
-@extends('index')
+@extends('layouts.app')
 
 @section('title','Editar Usuarios')
 

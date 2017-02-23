@@ -45,14 +45,17 @@ Route::group(['prefix'=>'admin'],function(){
 	/* FIN RUTAS DE USUARIOS*/
 
 
-	/* INICIO RUTAS DE USUARIOS*/
+	/* INICIO RUTAS DE CATEGORIAS*/
 	Route::resource('categories','CategoriasController');
 
 	Route::get('categories/{id}/destroy',[
 		'uses'=>'CategoriasController@destroy',
 		'as'=>'categories.destroy'
 	]);
-	/* FIN RUTAS DE USUARIOS*/
+	/* FIN RUTAS DE CATEGORIAS*/
+
 
 });
 
+
+Auth::routes();
