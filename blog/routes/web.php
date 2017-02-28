@@ -81,6 +81,12 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 	/*FIN RUTA ARTICULOS*/
 
 
+	Route::get('images',[
+		'uses'=>'ImagesController@index',
+		'as'=>'admin.image.index'
+	]);
+
+
 });
 
 
