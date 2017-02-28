@@ -3,20 +3,27 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+
+use Laracasts\Flash\Flash;
+use App\Http\Requests\ArticleRequest;
+
 use App\Article;
 use App\Category;
 use App\Tag;
 use App\Image;
-use Laracasts\Flash\Flash;
-use App\Http\Request\ArticleRequest;
 
 
 class ArticlesController extends Controller
 {
     //
-    public function index(){
+    public function index(Request $request){
     	
-    	return view('admin.articles.list');
+    	$articles = Article::Search($request->title)->orderBy('id', 'DESC')->paginate(5);
+		$articles->each(function($articles){
+			$articles->category;
+			$articles->user;
+		});
+    	return view('admin.articles.index')->with('articles', $articles);
 
     }
 
@@ -58,5 +65,48 @@ class ArticlesController extends Controller
 		Flash::success('Se ha creado el articulo '. $article->title . ' con exito !');
 		return redirect()->route('articles.index'); 
     }
+
+
+    public function edit($id)
+	{
+		$article = Article::find($id);
+		$article->category;
+		$categories = Category::orderBy('name', 'DESC')->pluck('name','id');
+		$tags = Tag::orderBy('name', 'DESC')->pluck('name','id');
+
+		$my_tags = $article->tags->pluck('id')->ToArray();
+		
+
+		return view('admin.articles.edit')
+			->with('categories', $categories)
+			->with('article', $article)
+			->with('tags', $tags )
+			->with('my_tags', $my_tags);
+
+	}
+
+	public function update(Request $request, $id)
+	{
+		$article = Article::find($id);
+		$article->fill($request->all());
+		$article->save();
+
+		$article->tags()->sync($request->tags);
+		Flash::warning('Se ha editado el articulo '. $article->title . ' de forma exitosa');
+		return redirect()->route('articles.index');
+	}
+
+
+	public function destroy($id)
+	{
+		$article = Article::find($id);
+		$article->delete();
+
+		Flash::error('Se a eliminado el articulo '. $article->title .' con exito');
+		return redirect()->route('articles.index');
+	}
+
+
+
 
 }

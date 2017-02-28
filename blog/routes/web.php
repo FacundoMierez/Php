@@ -73,6 +73,11 @@ Route::group(['prefix'=>'admin','middleware'=>'auth'],function(){
 
 
 	Route::resource('articles','ArticlesController');
+	Route::get('articles/destroy/{id}',[
+		'uses'=>'ArticlesController@destroy',
+		'as'=>'articles.destroy'
+	]);
+
 	/*FIN RUTA ARTICULOS*/
 
 
