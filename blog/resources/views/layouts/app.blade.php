@@ -13,7 +13,8 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{asset('css/bootstrap.css')}}">
-
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/chosen.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('Trumbowyg/ui/trumbowyg.css') }}">
     <!-- Scripts -->
     <script>
         window.Laravel = {!! json_encode([
@@ -123,6 +124,13 @@
     </div>
 
     <!-- Scripts -->
+    <script src="{{asset('js/jquery-3.1.1.min.js')}}"></script>
+    <script src="{{ asset('js/bootstrap.min.js') }}"></script>
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/chosen.jquery.js') }}"></script>
+    <script src="{{ asset('Trumbowyg/trumbowyg.min.js') }}"></script>
+
+
+    @yield('js')
 </body>
 </html>

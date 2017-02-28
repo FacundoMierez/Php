@@ -130,3 +130,6 @@ Tuve que descomentar la linea del constructor del home para que no me obligue a 
 
 En la carpeta de Middleware modifique la ruta de redireccionamiento, en donde indica que si esta logueado y quiere
 acceder nuevamente a login, esto me redireccione a home
+
+
+Desde el controlador podemos llamar a \Auth():user->id

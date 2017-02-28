@@ -22,16 +22,14 @@
             </div>
             <div class="category">
                 <ul>
-                @foreach ($cat as $item)                    
-                    <li role="separator" class="divider"><a href="{{$item->id}}">{{$item->name}}</a></li>
-                @endforeach
+ 
 
                 </ul>
             </div>
         </div>
 
     </div>
-
+        
     <div class="row feature">
         <div class="col-md-6 feature-new">
             <h4>Noticias</h4>            
