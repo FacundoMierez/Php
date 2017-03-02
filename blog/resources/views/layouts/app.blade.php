@@ -69,7 +69,7 @@
                                     </header>
                                     @if (Auth::guest())
                                         <ul>
-                                            <li><a href="index.html">Homepage</a></li>
+                                            <li><a href="{{ route('HomeView') }}">Homepage</a></li>
                                             <li><a href="generic.html">Generic</a></li>
                                             <li><a href="elements.html">Elements</a></li>
                                             <li>
@@ -94,7 +94,7 @@
                                             </li>
                                             <li><a href="#">Maximus Erat</a></li>
                                             <li><a href="#">Sapien Mauris</a></li>
-                                            <li><a href="#">Amet Lacinia</a></li>
+                                            <li><a href="{{ route('login') }}">Login</a></li>
                                         </ul>
                                     @else
                                     <ul>
@@ -113,7 +113,9 @@
                                             </ul>
                                         </li>
 
+                                        @if(Auth::user()->isAdmin())
                                         <li><a href="{{route('users.list')}}">Usuarios</a></li>
+                                        @endif
                                         <li><a href="{{route('categories.index')}}">Categorias</a></li>
                                         <li><a href="{{route('articles.index')}}">Articulos</a></li>
                                         <li><a href="{{route('admin.image.index')}}">Imagenes</a></li>

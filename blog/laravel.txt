@@ -141,3 +141,44 @@ para ejecutar los SEEDS -> php artisan db:seed
 Con el uso del component Factory podemos agregar aleatoriamente varios usuarios 
 
 Para manejos de fechas utilizamos Carbon
+
+
+Middleware:
+
+1)primero lo que hicimos es crear un middleware admin -> php artisan make:middleware Admin
+2)Luego hay que ir al path: vendor->laravel->framework->src->illuminate->auth->Middleware->Authenticate.php
+y copiar el siguiente codigo:
+
+ protected $auth;
+
+    /**
+     * Create a new middleware instance.
+     *
+     * @param  \Illuminate\Contracts\Auth\Factory  $auth
+     * @return void
+     */
+    public function __construct(Auth $auth)
+    {
+        $this->auth = $auth;
+    }
+
+
+ y no olvidar importar la clase -> use Illuminate\Contracts\Auth\Factory as Auth;
+
+ Luego probamos traer el usuario con la sesion iniciada -> dd($this->auth->user()) desde la funcion handle del middleware recientemente creado (ADMIN)
+
+ 3) creeamos un metodo en el modelo de usuario
+
+  public function isAdmin(){
+        return $this->type ==='admin'; //el triple = funciona como un if, si es admin nos devuelve TRUE
+    }
+
+
+
+TRADUCCIONES:
+
+para poder traducir los mensajes y sean de contenido dinamico, hay que crear un archivo dentro de resource/lang/es por ejemplo si es que queremos traducir todos los mensajes a español, en este caso el archivo que creamos lo llamamos app.php y lo unico que se tradujo es el titulo de articulos reciente, ahora para poder tener traduccion a ingles, debemos crear el mismo archivo creado en es pero con traducciones a ingles, y luego modificar el archivo config/app.php en la linea donde define el lenguaje a utilizar: --> 'locale' => 'es', y cambiar por 'locale' => 'en' para que traduzca todo a ingles.
+
+Tambien le podemos pasar parametro para utilizar en las vista:
+
+{{trans()}}

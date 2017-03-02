@@ -6,6 +6,7 @@
 <!-- Inicio Banner -->
 <section id="banner">
     <div class="content">
+
         <header>
         @foreach ($articleReciente as $element)
             <h3>{{$element->title}}<br /></h3>
@@ -75,7 +76,7 @@
 
 <section>
     <header class="major">
-        <h2>Mas Reciente</h2>
+        <h2>{{trans('app.title_last_articles')}}</h2>
     </header>
   
 

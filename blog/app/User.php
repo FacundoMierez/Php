@@ -30,4 +30,8 @@ class User extends Authenticatable
     public function articles(){
        return $this->hasMany('App\Article'); 
     }
+
+    public function isAdmin(){
+        return $this->type ==='admin'; //el triple = funciona como un if, si es admin nos devuelve TRUE
+    }
 }

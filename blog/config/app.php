@@ -77,7 +77,7 @@ return [
     |
     */
 
-    'locale' => 'es',
+    'locale' => 'en',
 
     /*
     |--------------------------------------------------------------------------
@@ -90,7 +90,7 @@ return [
     |
     */
 
-    'fallback_locale' => 'es',
+    'fallback_locale' => 'en', //esta linea indica que si no encuentra las sentencia anterior buscaria esta linea, es decir si no encuentra en españo va a buscar en ingles
 
     /*
     |--------------------------------------------------------------------------

@@ -9,7 +9,7 @@
                 <div class="panel-heading">Sesion Iniciada</div>
 
                 <div class="panel-body">
-                   <h1>Bienvenido {{$user->name}}</h1>
+                   <h1>{{trans('app.welcome',['name'=>$user->name])}}</h1>
                 </div>
             </div>
         </div>
