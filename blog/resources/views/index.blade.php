@@ -7,12 +7,12 @@
 <section id="banner">
     <div class="content">
         <header>
-        @foreach ($articles as $element)
+        @foreach ($articleReciente as $element)
             <h3>{{$element->title}}<br /></h3>
-            <p><i class="fa fa-folder-open-o"></i>{{$element->category->name}}</p>  
+            <p><i class="fa fa-folder-open-o"></i><a href="{{ route('HomeSearchCategory',$element->category->name) }}"> {{$element->category->name}}</a></p>  
         </header>
         <p align="justify">{{str_limit($element->content,$limit = 253, $end = '...')}}</p>
-        <p><i class="fa fa-clock-o"> {{$element->created_at}}</i></p>
+        <p><i class="fa fa-clock-o">{{$element->created_at->diffForHumans()}}</i></p>
         <ul class="actions">
             <li><a href="#" class="button big">Learn More</a></li>
         </ul>
@@ -77,22 +77,33 @@
     <header class="major">
         <h2>Mas Reciente</h2>
     </header>
+  
 
     <div class="posts">
-        @foreach ($article as $element)
-      
-        <article>
-            <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
-            <h3>{{$element->title}}</h3>
-            <p><i class="fa fa-folder-open-o"></i> {{$element->category->name}}</p> 
-            <p> {{str_limit($element->content,$limit = 100, $end = '...')}}</p>
-            <p><i class="fa fa-clock-o"> {{$element->created_at->diffForHumans()}}</i></p>
-            <ul class="actions">
-                <li><a href="#" class="button">More</a></li>
-            </ul>
-        </article>
+        @foreach ($articles as $element)   
+            <article>
+                <a href="{{ route('HomeSearchArticle',$element->title) }}" class="image">
+                @foreach($element->images as $image)
+                    <img src="{{$image->name}}" alt="" />
+                    @break <!--este brack me sirve cuando un articulo tiene mas de una imagen, entonces con esto solo muestro una sola-->
+                @endforeach
+                 </a> 
+
+                <br>
+                <h3>
+                    <a href="{{ route('HomeSearchArticle',$element->title) }}" class="image">{{$element->title}}</a>
+                </h3>
+                <p><i class="fa fa-folder-open-o"></i><a href="{{ route('HomeSearchCategory',$element->category->name) }}"> {{$element->category->name}}</a></p> 
+                <p> {{str_limit($element->content,$limit = 100, $end = '...')}}</p>
+                <p><i class="fa fa-clock-o"> {{$element->created_at->diffForHumans()}}</i></p>
+                <ul class="actions">
+                    <li><a href="{{ route('HomeSearchArticle',$element->title) }}" class="button">More</a></li>
+                </ul>
+            </article>
+       
         @endforeach
     </div>
+ 
                                     
 </section>
 <!--Fin Article -->

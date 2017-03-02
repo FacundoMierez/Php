@@ -18,6 +18,21 @@ Route::get('/', [
 	'as' => 'HomeView' //nombre de la ruta
 ]);
 
+Route::get('categories/{name}', [
+    
+    'uses'=> 'HomeController@searchCategory',
+	'as' => 'HomeSearchCategory' //nombre de la ruta
+]);
+
+Route::get('articles/{name}', [
+    
+    'uses'=> 'HomeController@searchArticle',
+	'as' => 'HomeSearchArticle' //nombre de la ruta
+]);
+
+
+
+
 Route::group(['prefix'=>'articles'],function(){
 
 	Route::get('view/{id}',[

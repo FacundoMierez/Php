@@ -49,6 +49,7 @@ class HomeController extends Controller
         //dd($art_rec);
 
         $articles=Article::orderBy('id','DESC')->take(6)->get();
+
         $articles->each(function($articles){
                 $articles->category;
                 $articles->images;
@@ -56,8 +57,38 @@ class HomeController extends Controller
         });
         
         return view('index')
-            ->with('articles',$art_rec)
+            ->with('articleReciente',$art_rec)
             ->with('cat',$categories)
-            ->with('article',$articles);
+            ->with('articles',$articles);
+    }
+
+    public function searchCategory($name){
+        $category= Category::SearchCategory($name)->first();
+        $article=$category->articles()->paginate(6);
+
+        $article->each(function($articles){
+            $articles->category;
+            $articles->images;
+        
+        });
+
+       return view('articles.view')->with('articles',$article);
+    }
+
+    public function searchArticle($name){
+
+        $article=Article::Search($name)->get();
+        $article->each(function($articles){
+            $articles->category;
+            $articles->images;
+        
+        });
+
+        $active="active";
+
+        return view('articles.details')
+            ->with('article',$article)
+            ->with('active',$active);
+
     }
 }
