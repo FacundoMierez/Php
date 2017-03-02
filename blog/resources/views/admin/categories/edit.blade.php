@@ -1,6 +1,5 @@
 
-@extends('index')
-
+@extends('layouts.app')
 @section('title','Editar Categorias')
 
 @section('content')

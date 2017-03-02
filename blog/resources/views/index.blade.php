@@ -1,96 +1,100 @@
 @extends('layouts.app')
 
+
 @section('content')
-<br>
-<div class="container">
-   
-    <div class="row">
-        <div class="col-md-8">
-            <a href="" >
-                <img class="img img-responsive img-rounded" src="http://static.minutouno.com/adjuntos/150/imagenes/011/230/0011230322.jpg" alt="Will Neil Young's new tour be worth the wait">
-            </a>
-        </div>
 
-        <div class="col-md-4">
-            <div class="search text-center">
-                <h3><span class="glyphicon glyphicon-search"></span> Buscar Articulos</h3>
-            </div>
-            <input type="text" name="search" id="search" class="form-control" title="search" placeholder="Buscar...">
-
-            <div class="search text-center">
-               <h3><span class=""></span>Categorias</h3>
-            </div>
-            <div class="category">
-                <ul>
- 
-
-                </ul>
-            </div>
-        </div>
-
+<!-- Inicio Banner -->
+<section id="banner">
+    <div class="content">
+        <header>
+        @foreach ($articles as $element)
+            <h3>{{$element->title}}<br /></h3>
+            <p><i class="fa fa-folder-open-o"></i>{{$element->category->name}}</p>  
+        </header>
+        <p align="justify">{{str_limit($element->content,$limit = 253, $end = '...')}}</p>
+        <p><i class="fa fa-clock-o"> Hace 3 minutos</i></p>
+        <ul class="actions">
+            <li><a href="#" class="button big">Learn More</a></li>
+        </ul>
     </div>
+
+    <span class="image object">
+        <img src="{{$element->images[0]->name}}" alt="" />
+    </span>
+    @endforeach
+</section>
+<!--Fin Banenr -->
+
+
+<!-- Inicio Section CATEGORY -->
+<section>                                
+    <header class="major">
+        <h2>Categorias</h2>
+    </header>
+    @foreach ($cat as $element)@endforeach
+    <div class="features">
         
-    <div class="row feature">
-        <div class="col-md-6 feature-new">
-            <h4>Noticias</h4>            
-        </div>
-        <div class="col-md-4 col-md-offset-2 hidden-xs">
-            <ul class="nav nav-pills">
-                <li role="presentation" class="popular"><a href="#">Recientes</a></li>
-                <li role="presentation" class="reciente"><a href="#">Populares</a></li>
-            </ul>   
-
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-md-6">
-            
-            <div class="row">
-                <br>
-                <div class="col-md-6">
-                    <a href="">
-                        <img width="250" src="http://ep00.epimg.net/tecnologia/imagenes/2014/01/06/actualidad/1389037452_720619_1389037645_noticia_normal.jpg" class="img img-responsive">
-                    </a>
-                </div>
-
-                <div class="col-md-6">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <a href="">
-                                <img  width="200" src="http://ep01.epimg.net/internacional/imagenes/2016/11/09/estados_unidos/1478647677_279555_1478692897_noticia_fotograma.jpg" class="img img-responsive">
-
-                            </a>
-                        </div>
-                         <div class="col-md-7">
-                            <p>Elecciones en EEUU</p>
-                            <strong>Categoria: <mark>Politica</mark></strong>
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col-md-5">
-                            <a href="">
-                                <img  width="200" src="http://todo-tecnologia.net/wp-content/uploads/2014/02/42FF-Tecnologia-novo1.gif" class="img img-responsive">
-
-                            </a>
-                        </div>
-                        <div class="col-md-7">
-                            <p>Reloj Inteligente</p>
-                            <strong>Categoria: <mark>Tecnologia</mark></strong>
-                        </div>
-                    </div>
-
-                </div>      
+        <article>
+            <span class="icon fa-diamond"></span>
+            <div class="content">
+                 <h3>Lorem ipsum dolor sit amet</h3>
+                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
             </div>
-        </div>
+        </article>
+
+        <article>
+            <span class="icon fa-paper-plane"></span>
+            <div class="content">
+                <h3>Sapien veroeros</h3>
+                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+            </div>
+        </article>
+
+        <article>
+            <span class="icon fa-rocket"></span>
+            <div class="content">
+                <h3>Quam lorem ipsum</h3>
+                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+            </div>
+        </article>
+
+        <article>
+            <span class="icon fa-signal"></span>
+            <div class="content">
+                <h3>Sed magna finibus</h3>
+                <p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+            </div>
+        </article>
+
     </div>
-    <br>
-    <div class="row">
-        <div class="col-md-6">
-            <div class="col-md-5 search">Educacion</div>
-            <div class="col-md-5 col-md-offset-1 search">Negocio</div>
-        </div>
+
+</section>
+<!-- FIN Section CATEGORY -->
+
+<!--Inicio article-->
+
+<section>
+    <header class="major">
+        <h2>Mas Reciente</h2>
+    </header>
+
+    <div class="posts">
+        @foreach ($article as $element)
+      
+        <article>
+            <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+            <h3>{{$element->title}}</h3>
+            <p><i class="fa fa-folder-open-o"></i> {{$element->category->name}}</p> 
+            <p> {{str_limit($element->content,$limit = 100, $end = '...')}}</p>
+            <p><i class="fa fa-clock-o"> Hace 3 minutos</i></p>
+            <ul class="actions">
+                <li><a href="#" class="button">More</a></li>
+            </ul>
+        </article>
+        @endforeach
     </div>
-</div>
+                                    
+</section>
+<!--Fin Article -->
+
 @endsection

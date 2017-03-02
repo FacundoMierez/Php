@@ -1,5 +1,5 @@
 
-@extends('index')
+@extends('layouts.app')
 
 @section('title','Crear Categorias')
 

@@ -22,41 +22,45 @@
 
 
 	</div>
-
-	<div class="table-responsive">
-		<table class="table table-bordered table-hover table-condensed">
-			
-			<!--HEAD-->
-			<thead>
-
-				<tr class="active info">
-					<th>#ID </th>
-					<th>Descripcion</th>
-					<th>ACCION</th>
-				</tr>
-			</thead>	
-
-			<!--BODY-->
-			<tbody class="text-center">
-			@foreach( $tag as $item)
-				<tr >
-					<td>{{$item->id}}</td>
-					<td >{{$item->name}}</td>
-
-					<td>
-						<a href="{{route('tags.destroy',$item->id)}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash" ></i></a>
-
-						<a href="{{route('tags.edit',$item->id)}}" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></a>
-
-					</td>
-					
-				</tr>
-			@endforeach
-			</tbody>
-		</table>
 	
-		<!-- pagination-->
-		{!! $tag->render() !!}
+	<div class="row">
+		<div class="col-md-12">	
+			<div class="table-responsive">
+				<table class="table table-bordered table-hover table-condensed">
+					
+					<!--HEAD-->
+					<thead>
+
+						<tr class="active info">
+							<th>#ID </th>
+							<th>Descripcion</th>
+							<th>ACCION</th>
+						</tr>
+					</thead>	
+
+					<!--BODY-->
+					<tbody class="text-center">
+					@foreach( $tag as $item)
+						<tr >
+							<td>{{$item->id}}</td>
+							<td >{{$item->name}}</td>
+
+							<td>
+								<a href="{{route('tags.destroy',$item->id)}}" class="btn btn-danger"><i class="glyphicon glyphicon-trash" ></i></a>
+
+								<a href="{{route('tags.edit',$item->id)}}" class="btn btn-info"><i class="glyphicon glyphicon-pencil"></i></a>
+
+							</td>
+							
+						</tr>
+					@endforeach
+					</tbody>
+				</table>
+			
+				<!-- pagination-->
+				{!! $tag->render() !!}
+			</div>
+		</div>
 	</div>
 
 @endsection

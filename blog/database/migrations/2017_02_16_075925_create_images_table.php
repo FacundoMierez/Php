@@ -15,7 +15,7 @@ class CreateImagesTable extends Migration
     {
         Schema::create('images', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name',20);
+            $table->string('name',100);
             $table->integer('article_id')->unsigned();
 
             $table->foreign('article_id')->references('id')->on('articles')->onDelete('cascade');

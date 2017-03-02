@@ -133,3 +133,9 @@ acceder nuevamente a login, esto me redireccione a home
 
 
 Desde el controlador podemos llamar a \Auth():user->id
+
+
+SEEDS ->agregan contenido a la BD para hacer pruebas, en este caso creamos un UserSeeder para probar
+para ejecutar los SEEDS -> php artisan db:seed
+
+Con el uso del component Factory podemos agregar aleatoriamente varios usuarios 

@@ -11,7 +11,7 @@
 	@endforeach
 
 
-
+	
 	{!! Form::open(['route'=>'articles.store','method' => 'POST','files'=>'true']) !!}
 		
 		<div class="form-group">

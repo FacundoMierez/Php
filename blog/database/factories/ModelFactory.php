@@ -12,13 +12,36 @@
 */
 
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
-$factory->define(App\User::class, function (Faker\Generator $faker) {
-    static $password;
+/*$factory->define(App\User::class, function (Faker\Generator $faker) {
 
     return [
         'name' => $faker->name,
-        'email' => $faker->unique()->safeEmail,
-        'password' => $password ?: $password = bcrypt('secret'),
+        'email' => $faker->unique()->email,
+        'password' => bcrypt('451157'),
+        'type'=>'admin',
         'remember_token' => str_random(10),
     ];
-});
+});*/
+
+
+/*$factory->define(App\Article::class, function (Faker\Generator $faker) {
+
+    return [
+        'title' => $faker->sentence($nbWords = 6, $variableNbWords = true),
+        'content'=>$faker->text,
+        'user_id'=>$faker->numberBetween($min = 1, $max = 22),
+        'category_id'=>$faker->numberBetween($min=1,$max=4)
+
+    ];
+});*/
+
+/*$factory->define(App\Image::class, function (Faker\Generator $faker) {
+
+    return [
+        'name' =>$faker->imageUrl($width = 640, $height = 480),
+        'article_id'=>$faker->numberBetween($min=2,$max=55)
+
+    ];
+});*/
+
+

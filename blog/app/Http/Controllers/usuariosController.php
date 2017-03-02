@@ -14,14 +14,15 @@ class usuariosController extends Controller
     public function index(){
         //aca deberiamos traer la informacion de la sesion iniciada
         //dd(Auth());
-      return view('admin.users.home');
+        $user_actual=User::find(\Auth::user()->id);
+        return view('admin.users.home')->with('user',$user_actual);
     }
 
     public function list(){
 
         //$users= User::all();
         $users=User::orderBy('id','ASC')->paginate(5);
-
+        
         //return view('admin.users.index',$users);
         return view('admin.users.list')->with('users',$users); //users nombre de var en la vista $users var con los valores obtenidos desde la bd
     }

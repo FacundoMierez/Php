@@ -18,7 +18,7 @@ class ArticlesController extends Controller
     //
     public function index(Request $request){
     	
-    	$articles = Article::Search($request->title)->orderBy('id', 'DESC')->paginate(5);
+    	$articles = Article::Search($request->title)->orderBy('id', 'DESC')->paginate(10);
 		$articles->each(function($articles){
 			$articles->category;
 			$articles->user;
@@ -76,6 +76,7 @@ class ArticlesController extends Controller
 
 		$my_tags = $article->tags->pluck('id')->ToArray();
 		
+
 
 		return view('admin.articles.edit')
 			->with('categories', $categories)
