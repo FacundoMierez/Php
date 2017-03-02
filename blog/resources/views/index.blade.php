@@ -12,7 +12,7 @@
             <p><i class="fa fa-folder-open-o"></i>{{$element->category->name}}</p>  
         </header>
         <p align="justify">{{str_limit($element->content,$limit = 253, $end = '...')}}</p>
-        <p><i class="fa fa-clock-o"> Hace 3 minutos</i></p>
+        <p><i class="fa fa-clock-o"> {{$element->created_at}}</i></p>
         <ul class="actions">
             <li><a href="#" class="button big">Learn More</a></li>
         </ul>
@@ -86,7 +86,7 @@
             <h3>{{$element->title}}</h3>
             <p><i class="fa fa-folder-open-o"></i> {{$element->category->name}}</p> 
             <p> {{str_limit($element->content,$limit = 100, $end = '...')}}</p>
-            <p><i class="fa fa-clock-o"> Hace 3 minutos</i></p>
+            <p><i class="fa fa-clock-o"> {{$element->created_at->diffForHumans()}}</i></p>
             <ul class="actions">
                 <li><a href="#" class="button">More</a></li>
             </ul>

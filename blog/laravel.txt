@@ -139,3 +139,5 @@ SEEDS ->agregan contenido a la BD para hacer pruebas, en este caso creamos un Us
 para ejecutar los SEEDS -> php artisan db:seed
 
 Con el uso del component Factory podemos agregar aleatoriamente varios usuarios 
+
+Para manejos de fechas utilizamos Carbon
