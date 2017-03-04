@@ -1,0 +1,26 @@
+1)composer global require laravel/installer : para instalar de manera global
+
+2)laravel new nombre_proyecto: creamos el proyecto
+
+3)php artisan make:auth : generamos la autenticacion
+4)php artisan migrate: creamos las migraciones para que cree las tablas correspondiente a la autenticacion.
+
+
+Para resolver en el caso que se produzca el siguiente error: URL error 60: SSL certificate
+
+tuve que seguir estos pasos:
+
+1)composer require guzzlehttp/guzzle
+2)agregar composer.json :"guzzlehttp/guzzle":"~4.0"
+3)composer update
+4)https://curl.haxx.se/ca/cacert.pem descargar ese archivo y pegar en C:\wamp64\bin\php\php7.0.10
+y nombrar al archivo cacert.pen.txt
+5)luego modificar php.ini que esta en la direccion C:\wamp64\bin\php\php7.0.10 y agregar la siguiente linea: curl.cainfo = "C:\wamp64\bin\php\php7.0.10\cacert.pem.txt".
+
+Segui este link de stack->http://stackoverflow.com/questions/30240840/laravel-5-socialite-curl-error-77-error-setting-certificate-verify-locations
+
+
+
+
+
+Artisan: nombre de la interfaz de linea de comando
