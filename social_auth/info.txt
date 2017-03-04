@@ -17,7 +17,7 @@ tuve que seguir estos pasos:
 y nombrar al archivo cacert.pen.txt
 5)luego modificar php.ini que esta en la direccion C:\wamp64\bin\php\php7.0.10 y agregar la siguiente linea: curl.cainfo = "C:\wamp64\bin\php\php7.0.10\cacert.pem.txt".
 
-Segui este link de stack->http://stackoverflow.com/questions/30240840/laravel-5-socialite-curl-error-77-error-setting-certificate-verify-locations
+Segui este link de stack->http://stackoverflow.com/questions/30240840/laravel-5-socialite-curl-error-77-error-setting-certificate-verify-12:39 a.m. 04/03/2017locations
 
 
 
