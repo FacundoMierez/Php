@@ -11,9 +11,20 @@
 |
 */
 
-Route::get('/', function () {
+
+Route::get('/', [
+    
+    'uses'=> 'HomeController@Index',
+	'as' => 'Home' //nombre de la ruta
+]);
+
+
+/*Route::get('/', function () {
     DNS2D::getBarcodePngPath("PrimerQR", "QRCODE",7,7);
 	echo "<img src='PrimerQR.png' />";
 
-	//echo DNS2D::getBarcodeHTML("4445645656", "QRCODE");
-});
+	echo DNS2D::getBarcodeHTML("4445645656", "QRCODE");
+
+});*/
+
+Route::get('barcode', 'HomeController@barcode');
