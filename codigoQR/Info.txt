@@ -1,0 +1,23 @@
+1)composer require milon/barcode
+
+2)You can also edit your project's composer.json file to require milon/barcode.
+
+"require": {
+    ...
+    "milon/barcode": "^5.2"
+}
+
+3)composer update
+
+4)'providers' => [
+    ...
+    Milon\Barcode\BarcodeServiceProvider::class,
+    ...
+]
+5)php artisan vendor:publish
+
+6)'aliases' => [
+    ...
+    'DNS1D' => Milon\Barcode\Facades\DNS1DFacade::class,
+    'DNS2D' => Milon\Barcode\Facades\DNS2DFacade::class,
+]
